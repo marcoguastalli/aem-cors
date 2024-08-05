@@ -4,8 +4,16 @@
 # By default, it includes just the rewrite rules. You can
 # add rewrite rules to this file but you should still include
 # the default rewrite rules.
+#
+# https://httpd.apache.org/docs/current/mod/mod_rewrite.html
 
 Include conf.d/rewrites/default_rewrite.rules
+
+# robots.txt
+RewriteRule ^/robots.txt$ /content/dam/${CONTENT_FOLDER_NAME}/robots\.txt [PT,L]
+
+# favicon.ico
+RewriteRule ^/favicon.ico$ /content/dam/${CONTENT_FOLDER_NAME}/icons/favicon\.ico [NC,PT]
 
 # rewrite for root redirect
 RewriteRule ^/?$ /content/${CONTENT_FOLDER_NAME}/us/en.html [PT,L]
