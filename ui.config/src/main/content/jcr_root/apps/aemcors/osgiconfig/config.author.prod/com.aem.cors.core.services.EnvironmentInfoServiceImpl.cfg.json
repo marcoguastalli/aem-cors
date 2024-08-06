@@ -1,0 +1,5 @@
+{
+  "environmentAndRunMode": "PROD AUTHOR",
+  "organizationId": "$[env:ORGANIZATION_ID]",
+  "organizationSecret": "$[env:ORGANIZATION_SECRET]"
+}

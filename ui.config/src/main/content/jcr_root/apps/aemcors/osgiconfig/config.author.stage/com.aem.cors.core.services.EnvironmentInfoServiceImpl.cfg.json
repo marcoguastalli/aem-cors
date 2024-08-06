@@ -1,0 +1,5 @@
+{
+  "environmentAndRunMode": "STAGE AUTHOR",
+  "organizationId": "$[env:ORGANIZATION_ID]",
+  "organizationSecret": "$[env:ORGANIZATION_SECRET]"
+}

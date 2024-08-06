@@ -1,0 +1,5 @@
+{
+  "environmentAndRunMode": "Please define a new OSGi config in the right folder",
+  "organizationId": "$[env:ORGANIZATION_ID]",
+  "organizationSecret": "$[env:ORGANIZATION_SECRET]"
+}

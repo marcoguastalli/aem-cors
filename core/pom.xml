@@ -32,7 +32,7 @@
                         <configuration>
                             <bnd><![CDATA[
 Import-Package: org.apache.commons.lang3;version=3.14.0;org.apache.commons.io;version=2.15.1;javax.annotation;version=0.0.0,*
-Export-Package: com.aem.cors.core.exceptions.*;com.aem.cors.core.filters.*;com.aem.cors.core.models.*;com.aem.cors.core.schedulers.*;com.aem.cors.core.servlets.*;version=${project.version}
+Export-Package: com.aem.cors.core.commonbeans.*;com.aem.cors.core.exceptions.*;com.aem.cors.core.filters.*;com.aem.cors.core.listeners.*;com.aem.cors.core.models.*;com.aem.cors.core.schedulers.*;com.aem.cors.core.services.*;com.aem.cors.core.servlets.*;com.aem.cors.core.utils.*;version=${project.version}
                                 ]]></bnd>
                         </configuration>
                     </execution>
@@ -128,5 +128,23 @@ Export-Package: com.aem.cors.core.exceptions.*;com.aem.cors.core.filters.*;com.a
             <scope>test</scope>
         </dependency>
         <!-- Testing END -->
+        <!-- gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <!-- Jetbrains annotations for null-analysis (SLING-7798) -->
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 </project>

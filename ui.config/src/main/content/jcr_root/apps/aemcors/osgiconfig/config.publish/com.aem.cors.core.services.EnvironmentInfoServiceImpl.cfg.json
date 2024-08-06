@@ -1,0 +1,5 @@
+{
+  "environmentAndRunMode": "LOCALHOST PUBLISH",
+  "organizationId": "$[env:ORGANIZATION_ID]",
+  "organizationSecret": "$[env:ORGANIZATION_SECRET]"
+}

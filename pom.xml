@@ -45,7 +45,7 @@
         <bnd.version>5.1.2</bnd.version>
         <componentGroupName>AEM CORS</componentGroupName>
         <!-- Plugins versions -->
-        <aemanalyser.version>1.5.12</aemanalyser.version>
+        <aemanalyser.version>1.6.0</aemanalyser.version>
         <frontend-maven-plugin.version>1.12.0</frontend-maven-plugin.version>
         <!-- JUnit version -->
         <org.junit.version>5.8.2</org.junit.version>
