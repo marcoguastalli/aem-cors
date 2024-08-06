@@ -1,0 +1,13 @@
+{
+  "allow.empty": "true",
+  "filter.methods=": [
+    "POST",
+    "PUT",
+    "DELETE",
+    "COPY",
+    "MOVE"
+  ],
+  "allow.hosts.regexp": [
+    "https://.*\\.adobeaemcloud\\.com:443"
+  ]
+}

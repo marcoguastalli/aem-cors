@@ -15,6 +15,8 @@
  */
 package com.aem.cors.core.servlets;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -26,8 +28,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(AemContextExtension.class)
 class SimpleServletTest {

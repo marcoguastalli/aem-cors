@@ -16,6 +16,7 @@
 package com.aem.cors.core.filters;
 
 import java.io.IOException;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -36,9 +37,9 @@ import org.slf4j.LoggerFactory;
  * Simple servlet filter component that logs incoming requests.
  */
 @Component(service = Filter.class,
-           property = {
-                   EngineConstants.SLING_FILTER_SCOPE + "=" + EngineConstants.FILTER_SCOPE_REQUEST,
-           })
+        property = {
+                EngineConstants.SLING_FILTER_SCOPE + "=" + EngineConstants.FILTER_SCOPE_REQUEST,
+        })
 @ServiceDescription("Demo to filter incoming requests")
 @ServiceRanking(-700)
 @ServiceVendor("Adobe")

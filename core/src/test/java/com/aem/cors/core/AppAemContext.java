@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.aem.cors.core.testcontext;
+package com.aem.cors.core;
 
 import static com.adobe.cq.wcm.core.components.testing.mock.ContextPlugins.CORE_COMPONENTS;
 import static org.apache.sling.testing.mock.caconfig.ContextPlugins.CACONFIG;
