@@ -38,18 +38,11 @@ $include "./default_filters.any"
 # Allow GET for Servlets
 ## core bundle
 /0300 { /type "allow" /url "/bin/aemcors/bundle-core" }
-/0301 { /type "allow" /method "GET" /url "/bin/aemcors/bundle-core" /extension "json" }
+/0301 { /type "allow" /url "/bin/aemcors/bundle-core.json" }
+/0302 { /type "allow" /method "GET" /url "/bin/aemcors/bundle-core" /extension "json" }
 
 # Allow POST for Servlets
-/0400 { /type "allow" /method "POST" /url "/bin/aemcors/bundle-core" }
-## Search Page References
-/0401 { /type "allow" /url "/bin/aemcors/search/pagereferences" }
-/0402 { /type "allow" /url "/bin/aemcors/search/pagereferences.json" }
-/0403 { /type "allow" /method "POST" /url "/bin/aemcors/search/pagereferences.json" }
-/0404 { /type "allow" /method "POST" /url "/bin/aemcors/search/pagereferences" /extension "json" }
-/0405 { /type "allow" /method "POST" /url "/bin/aemcors/downloadDoc" /extension "json" }
-## cq:Tags
-/0406 { /type "allow" /url "/bin/aemcors/cqtags" }
-/0407 { /type "allow" /url "/bin/aemcors/cqtags.json" }
-/0408 { /type "allow" /method "POST" /url "/bin/aemcors/cqtags.json" }
-/0409 { /type "allow" /method "POST" /url "/bin/aemcors/cqtags" /extension "json" }
+/0400 { /type "allow" /url "/bin/aemcors/bundle-core" }
+/0401 { /type "allow" /url "/bin/aemcors/bundle-core.json" }
+/0402 { /type "allow" /method "POST" /url "/bin/aemcors/bundle-core.json" }
+/0403 { /type "allow" /method "POST" /url "/bin/aemcors/bundle-core" /extension "json" }

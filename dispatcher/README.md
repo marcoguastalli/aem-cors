@@ -94,3 +94,8 @@ conf.dispatcher.d/filters/default_filters.any
 conf.dispatcher.d/renders/default_renders.any
 conf.dispatcher.d/virtualhosts/default_virtualhosts.any
 ```
+
+### md5
+openssl md5 dispatcher_vhost.conf
+openssl md5 default.farm
+openssl md5 default.vhost
