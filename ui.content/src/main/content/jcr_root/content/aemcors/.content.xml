@@ -4,8 +4,8 @@
     <jcr:content
         cq:allowedTemplates="[/conf/aemcors/settings/wcm/templates/(?!xf-).*]"
         cq:conf="/conf/aemcors"
-        cq:redirectTarget="/content/aemcors/us/en/home"
-        cq:template="/conf/aemcors/settings/wcm/templates/spa-app-template"
+        cq:redirectTarget="/content/aemcors/us/en"
+        cq:template="/conf/aemcors/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
         jcr:title="AEM CORS"
         sling:configRef="/conf/aemcors"

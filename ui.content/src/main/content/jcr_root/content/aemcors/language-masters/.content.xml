@@ -3,7 +3,7 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:redirectTarget="/content/aemcors/us/en"
-        cq:template="/conf/aemcors/settings/wcm/templates/spa-app-template"
+        cq:template="/conf/aemcors/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
         jcr:title="Language Masters"
         sling:resourceType="aemcors/components/page"

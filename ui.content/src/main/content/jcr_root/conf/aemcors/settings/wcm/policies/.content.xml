@@ -339,38 +339,13 @@
                     clientlibsJsHead="aemcors.dependencies">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy>
-                <policy_spa
-                    jcr:primaryType="nt:unstructured"
-                    jcr:title="AEM CORS SPA Page Policy"
-                    clientlibs="[aemcors.react]"
-                    sling:resourceType="wcm/core/components/policy/policy">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
-                </policy_spa>
             </page>
-            <spa jcr:primaryType="nt:unstructured">
-                <default
-                    jcr:primaryType="nt:unstructured"
-                    jcr:title="AEM CORS App Policy"
-                    sling:resourceType="wcm/core/components/policy/policy"
-                    clientlibs="[aemcors.react]"
-                    isRoot="{Boolean}true"
-                    structureDepth="3"
-                />
-            </spa>
         </components>
     </aemcors>
     <wcm jcr:primaryType="nt:unstructured">
         <foundation jcr:primaryType="nt:unstructured">
             <components jcr:primaryType="nt:unstructured">
                 <responsivegrid jcr:primaryType="nt:unstructured">
-                        <spa-default
-                        jcr:description="Includes only SPA-Enabled components."
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="SPA Content"
-                        sling:resourceType="wcm/core/components/policy/policy"
-                        components="[group:AEM CORS - Content]">
-                        <jcr:content jcr:primaryType="nt:unstructured"/>
-                    </spa-default>
             
                 </responsivegrid>
             </components>
