@@ -1,10 +1,31 @@
-# Sample AEM project template
+# AEMaaCS project with CORS enabled
 
-This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
+I had to expose some json endpoint from AEM to external consumers.
+
+I had CORS issues, the Adobe documentation and examples are not clear.
+
+They don't use valid Regular Expressions, they do not escape reg-exp chars.
+
+So it's even harder to achieve the goal from external host / origin.
+
+After tests and error I've found this configuration.
+
+It works :)
+
+And not only in my local.
+
+It works in the Adobe Cloud Manager.
+
+You can GET or POST a json from one AEMaaCS publish environment to another AEMaaCS, like from PROD to STAGE, to DEV, to RDE, etc..
+
+If you have a better configuration feel free to open my a Pull Request.
+
+Thank you, Cheers
+
 
 ## Modules
 
-The main parts of the template are:
+The main parts are:
 
 * [core:](core/README.md) Java bundle containing all core functionality like OSGi services, listeners or schedulers, as well as component-related Java code such as servlets or request filters.
 * [it.tests:](it.tests/README.md) Java based integration tests
