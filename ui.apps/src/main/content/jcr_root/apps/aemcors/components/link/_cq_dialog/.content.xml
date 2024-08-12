@@ -31,13 +31,13 @@
                                             fieldDescription="aemcors.components.link.field.linkText.description"
                                             fieldLabel="aemcors.components.link.field.linkText.label"
                                             name="./linkText"/>
-                                    <linkPath
+                                    <linkURL
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                             rootPath="/content/aemcors"
-                                            fieldDescription="aemcors.components.link.field.linkPath.description"
-                                            fieldLabel="aemcors.components.link.field.linkPath.label"
-                                            name="./linkPath"/>
+                                            fieldDescription="aemcors.components.link.field.linkURL.description"
+                                            fieldLabel="aemcors.components.link.field.linkURL.label"
+                                            name="./linkURL"/>
                                 </items>
                             </column>
                         </items>

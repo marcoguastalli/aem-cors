@@ -3,6 +3,6 @@
      data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
      data-sly-test="${!model.isEmpty}"
      id="${component.id}">
-    <a href="${model.linkPath}">${model.linkText}</a>
+    <a href="${model.linkUrl}">${model.linkText}</a>
 </div>
 <sly data-sly-call="${templates.placeholder @ isEmpty = model.isEmpty}"></sly>

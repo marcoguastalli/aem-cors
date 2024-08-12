@@ -31,7 +31,7 @@
             "sling:resourceType": "aemcors/components/container",
             "link": {
               "jcr:primaryType": "nt:unstructured",
-              "linkPath": "/content/aemcors/en/home",
+              "linkURL": "/content/aemcors/en/home",
               "linkText": "reload",
               "sling:resourceType": "aemcors/components/link"
             },

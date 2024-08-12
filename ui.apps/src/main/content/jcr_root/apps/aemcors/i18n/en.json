@@ -7,8 +7,8 @@
   "aemcors.components.htmlcomponent.tab.general.field.htmlcode": "Code",
   "aemcors.components.htmlcomponent.title": "HTML Component",
   "aemcors.components.link.description": "Add and configure a link",
-  "aemcors.components.link.field.linkPath.description": "Please select a link path",
-  "aemcors.components.link.field.linkPath.label": "Link Path",
+  "aemcors.components.link.field.linkURL.description": "Please select a link path",
+  "aemcors.components.link.field.linkURL.label": "Link Path",
   "aemcors.components.link.field.linkText.description": "Please insert a link text",
   "aemcors.components.link.field.linkText.label": "Link Text",
   "aemcors.components.link.title": "Link Component"

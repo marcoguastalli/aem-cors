@@ -16,20 +16,6 @@
 
 package com.aem.cors.core.models.components.title;
 
-import javax.annotation.PostConstruct;
-
-import org.apache.commons.lang3.StringUtils;
-import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.Exporter;
-import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
-import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
-import org.apache.sling.models.annotations.injectorspecific.Self;
-import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
 import com.adobe.cq.wcm.core.components.commons.link.Link;
@@ -43,15 +29,30 @@ import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import com.day.cq.wcm.api.designer.Style;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Exporter;
+import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
+import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
+import org.apache.sling.models.annotations.injectorspecific.Self;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import javax.annotation.PostConstruct;
 
 @Model(adaptables = SlingHttpServletRequest.class,
         adapters = {TitleV4.class, ComponentExporter.class},
-        resourceType = TitleV4.RESOURCE_TYPE)
+        resourceType = TitleV4.RESOURCE_TYPE
+)
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME,
-        extensions = ExporterConstants.SLING_MODEL_EXTENSION)
+        extensions = ExporterConstants.SLING_MODEL_EXTENSION
+)
 public class TitleV4 extends AbstractComponentImpl implements Title {
 
-    protected static final String RESOURCE_TYPE = "aemcors/components/title/v4";
+    protected static final String RESOURCE_TYPE = "aemcors/components/title/v4/title";
 
     private boolean linkDisabled = false;
 
