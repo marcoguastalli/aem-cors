@@ -15,14 +15,14 @@
  */
 package com.aem.cors.core;
 
-import static com.adobe.cq.wcm.core.components.testing.mock.ContextPlugins.CORE_COMPONENTS;
-import static org.apache.sling.testing.mock.caconfig.ContextPlugins.CACONFIG;
-
-import org.apache.sling.testing.mock.sling.ResourceResolverType;
-
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextBuilder;
 import io.wcm.testing.mock.aem.junit5.AemContextCallback;
+import org.apache.sling.testing.mock.sling.ResourceResolverType;
+import org.jetbrains.annotations.NotNull;
+
+import static com.adobe.cq.wcm.core.components.testing.mock.ContextPlugins.CORE_COMPONENTS;
+import static org.apache.sling.testing.mock.caconfig.ContextPlugins.CACONFIG;
 
 /**
  * Sets up {@link AemContext} for unit tests in this application.
@@ -31,6 +31,15 @@ public final class AppAemContext {
 
     private AppAemContext() {
         // static methods only
+    }
+
+    /**
+     * @param resourceResolverType
+     * @return {@link AemContext}
+     */
+    public static AemContext newAemContext(@NotNull ResourceResolverType resourceResolverType) {
+        AemContextBuilder aemContextBuilder = AppAemContext.newAemContextBuilder(resourceResolverType);
+        return aemContextBuilder.build();
     }
 
     /**

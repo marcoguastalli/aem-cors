@@ -1,29 +1,23 @@
 package com.aem.cors.core.servlets;
 
-import static com.aem.cors.core.CoreConstants.CONTENT_TYPE_APPLICATION_JSON;
-import static com.aem.cors.core.CoreConstants.HTTP_HEADER_CACHE_CONTROL;
-import static com.aem.cors.core.CoreConstants.HTTP_HEADER_NO_CACHE;
-import static com.aem.cors.core.CoreConstants.JSON_ERROR_OBJECT_DEFAULT;
-import static com.aem.cors.core.utils.LoggerUtils.logErrorTrackingId;
-import static com.aem.cors.core.utils.LoggerUtils.logWarnTrackingId;
-import static java.lang.String.format;
-import static org.apache.commons.lang3.StringUtils.EMPTY;
-
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.aem.cors.core.exceptions.AemRuntimeException;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.jetbrains.annotations.NotNull;
 
-import com.aem.cors.core.exceptions.AemRuntimeException;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.io.PrintWriter;
 
-import lombok.extern.slf4j.Slf4j;
+import static com.aem.cors.core.CoreConstants.*;
+import static com.aem.cors.core.utils.LoggerUtils.logErrorTrackingId;
+import static com.aem.cors.core.utils.LoggerUtils.logWarnTrackingId;
+import static java.lang.String.format;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 @Slf4j
 public abstract class AbstractSlingServlet extends SlingAllMethodsServlet {

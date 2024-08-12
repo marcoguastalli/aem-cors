@@ -79,6 +79,12 @@ test, execute:
 
     mvn clean test
 
+
+##### run single test
+
+    cd core
+    mvn test -Dtest=LinkModelTest
+
 ### Integration tests
 
 This allows running integration tests that exercise the capabilities of AEM via

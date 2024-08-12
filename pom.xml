@@ -534,6 +534,23 @@
                 <version>${core.wcm.components.version}</version>
                 <type>zip</type>
             </dependency>
+            <!-- https://github.com/FasterXML/ INI -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${com.fasterxml.jackson.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${com.fasterxml.jackson.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${com.fasterxml.jackson.core.version}</version>
+            </dependency>
+            <!-- https://github.com/FasterXML/jackson END -->
             <!-- Testing INI -->
             <dependency>
                 <groupId>org.junit</groupId>
@@ -605,6 +622,12 @@
                 <groupId>uk.org.lidalia</groupId>
                 <artifactId>slf4j-test</artifactId>
                 <version>1.0.1</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>xerces</groupId>
+                <artifactId>xercesImpl</artifactId>
+                <version>2.12.2</version>
                 <scope>test</scope>
             </dependency>
             <!-- Testing END -->

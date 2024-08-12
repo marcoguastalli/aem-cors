@@ -1,13 +1,6 @@
 package com.aem.cors.core.utils;
 
-import static com.aem.cors.core.utils.LoggerUtils.logDebugTrackingId;
-import static com.aem.cors.core.utils.LoggerUtils.logErrorTrackingId;
-import static com.aem.cors.core.utils.LoggerUtils.logHttpRequestParameters;
-import static com.aem.cors.core.utils.LoggerUtils.logInfoTrackingId;
-import static com.aem.cors.core.utils.LoggerUtils.logWarnTrackingId;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.notNullValue;
-
+import com.aem.cors.core.exceptions.AemRuntimeException;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,7 +8,9 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
 
-import com.aem.cors.core.exceptions.AemRuntimeException;
+import static com.aem.cors.core.utils.LoggerUtils.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.notNullValue;
 
 @ExtendWith(MockitoExtension.class)
 class LoggerUtilsTest {

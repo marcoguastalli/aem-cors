@@ -119,6 +119,7 @@
             <type>zip</type>
         </dependency>
 
+
         <dependency>
             <groupId>com.aem.cors</groupId>
             <artifactId>aem-cors.ui.apps.structure</artifactId>

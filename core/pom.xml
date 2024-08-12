@@ -79,6 +79,20 @@ Export-Package: com.aem.cors.core.commonbeans.*;com.aem.cors.core.exceptions.*;c
             <artifactId>core.wcm.components.core</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- https://github.com/FasterXML/ INI -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <!-- https://github.com/FasterXML/jackson END -->
         <!-- Testing INI -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -125,6 +139,11 @@ Export-Package: com.aem.cors.core.commonbeans.*;com.aem.cors.core.exceptions.*;c
         <dependency>
             <groupId>uk.org.lidalia</groupId>
             <artifactId>slf4j-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
             <scope>test</scope>
         </dependency>
         <!-- Testing END -->
