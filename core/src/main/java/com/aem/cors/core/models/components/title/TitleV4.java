@@ -43,6 +43,8 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.PostConstruct;
 
+import static com.aem.cors.core.CoreConstants.H1;
+
 @Model(adaptables = SlingHttpServletRequest.class,
         adapters = {TitleV4.class, ComponentExporter.class},
         resourceType = TitleV4.RESOURCE_TYPE
@@ -58,42 +60,32 @@ public class TitleV4 extends AbstractComponentImpl implements Title {
 
     @Self
     private SlingHttpServletRequest request;
-
     @ScriptVariable
     private Resource resource;
-
     @ScriptVariable
     private PageManager pageManager;
-
     @ScriptVariable
     private Page currentPage;
-
     @ScriptVariable(injectionStrategy = InjectionStrategy.OPTIONAL)
     @JsonIgnore
     @Nullable
     private Style currentStyle;
-
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL, name = JcrConstants.JCR_TITLE)
     @Nullable
     private String title;
-
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     @Nullable
     private String type;
-
     @Self
     private LinkManager linkManager;
     protected Link link;
-
 
     @PostConstruct
     private void initModel() {
         if (StringUtils.isBlank(title)) {
             title = StringUtils.defaultIfEmpty(currentPage.getPageTitle(), currentPage.getTitle());
         }
-
         link = linkManager.get(resource).build();
-
         if (currentStyle != null) {
             linkDisabled = currentStyle.get(Title.PN_TITLE_LINK_DISABLED, linkDisabled);
         }
@@ -106,7 +98,7 @@ public class TitleV4 extends AbstractComponentImpl implements Title {
 
     @Override
     public String getType() {
-        return "h1";
+        return null != type ? type : H1;
     }
 
     @Override

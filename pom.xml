@@ -39,17 +39,15 @@
         <aem.sdk.api>2024.7.17258.20240726T172406Z-240700</aem.sdk.api>
         <!-- Adobe Core Components https://github.com/adobe/aem-core-wcm-components/releases -->
         <core.wcm.components.version>2.25.4</core.wcm.components.version>
-        <!-- SPA Project Core https://github.com/adobe/aem-spa-project-core/releases -->
-        <spa.project.core.version>1.3.16</spa.project.core.version>
+        <!-- Frontend Maven Plugin https://github.com/eirslett/frontend-maven-plugin/releases -->
+        <frontend-maven-plugin.version>1.15.0</frontend-maven-plugin.version>
+        <node.version>v16.17.0</node.version>
+        <npm.version>8.15.0</npm.version>
         <!-- OSGi versions -->
         <bnd.version>5.1.2</bnd.version>
         <componentGroupName>AEM CORS</componentGroupName>
-        <!-- Frontend Maven Plugin https://github.com/eirslett/frontend-maven-plugin/releases -->
-        <frontend-maven-plugin.version>1.12.0</frontend-maven-plugin.version>
-        <!-- Plugins versions -->
+        <!-- AEM Analyser versions https://github.com/adobe/aemanalyser-maven-plugin/releases -->
         <aemanalyser.version>1.6.4</aemanalyser.version>
-        <node.version>v16.17.0</node.version>
-        <npm.version>8.15.0</npm.version>
         <!-- 3rd party versions -->
         <com.fasterxml.jackson.core.version>2.17.1</com.fasterxml.jackson.core.version>
         <!-- JUnit version -->

@@ -57,7 +57,7 @@ public class LinkModel extends AbstractComponentImpl {
         if (null != link && link.isValid()) {
             return link.getURL();
         }
-        return null;
+        return linkURL;
     }
 
     public boolean isEmpty() {

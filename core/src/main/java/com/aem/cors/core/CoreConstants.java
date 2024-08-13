@@ -22,5 +22,6 @@ public class CoreConstants {
 
     public static final String CONTENT_TYPE_APPLICATION_JSON = "application/json";
 
+    public static final String H1 = "h1";
     public static final String EQUALS = "=";
 }

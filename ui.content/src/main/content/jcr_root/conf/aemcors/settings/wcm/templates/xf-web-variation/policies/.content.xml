@@ -12,7 +12,7 @@
             <mysite jcr:primaryType="nt:unstructured">
                 <components jcr:primaryType="nt:unstructured">
                     <title
-                        cq:policy="aemcors/components/title/policy_641528232375303"
+                        cq:policy="aemcors/components/title/title_policy_with_link_enabled"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="wcm/core/components/policies/mapping"/>
                     <text

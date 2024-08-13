@@ -19,7 +19,7 @@
     jcr:title="Title"
     sling:resourceType="cq/gui/components/authoring/dialog"
     extraClientlibs="[core.wcm.components.title.v2.editor]"
-    helpPath=""
+    helpPath="https://www.aemcomponents.dev/"
     trackingFeature="core-components:title:v3">
     <content
         jcr:primaryType="nt:unstructured"

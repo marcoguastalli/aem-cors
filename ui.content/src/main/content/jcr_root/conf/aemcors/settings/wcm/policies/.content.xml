@@ -166,7 +166,7 @@
                 </policy_641562756958017>
             </text>
             <title jcr:primaryType="nt:unstructured">
-                <policy_641475696923109
+                <title_policy_with_link_disabled
                     jcr:description="Allows only H1 and disallows links for the main page title."
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Title"
@@ -175,8 +175,8 @@
                     linkDisabled="true"
                     type="h1">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
-                </policy_641475696923109>
-                <policy_641528232375303
+                </title_policy_with_link_disabled>
+                <title_policy_with_link_enabled
                     jcr:description="Allows all sizes, but not H1, which is reserved for the main page title."
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Content Title"
@@ -185,7 +185,7 @@
                     linkDisabled="false"
                     type="h2">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
-                </policy_641528232375303>
+                </title_policy_with_link_enabled>
             </title>
             <experiencefragment jcr:primaryType="nt:unstructured">
                 <policy_header

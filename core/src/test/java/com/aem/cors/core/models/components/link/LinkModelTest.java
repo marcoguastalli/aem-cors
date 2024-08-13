@@ -7,7 +7,6 @@ import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.testing.mock.sling.ResourceResolverType;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -30,14 +29,15 @@ class LinkModelTest {
         aemContext.load().json("/com/aem/cors/core/models/components/link/link.json", "/content");
     }
 
-    @Disabled
     @Test
     void testModel() {
         // given
-        final Resource resource = aemContext.resourceResolver().getResource("/content/aemcors/en/home/jcr:content/root/link");
-        assertThat(resource, notNullValue());
+        Resource resource = aemContext.resourceResolver().getResource("/content/aemcors/en/home/jcr:content/root/container/container/link");
         assertThat(resource.getResourceType(), is(RESOURCE_TYPE));
-        final LinkModel model = resource.adaptTo(LinkModel.class);
+        aemContext.currentResource(resource);
+        aemContext.request().setResource(resource);
+        //final LinkModel model = resource.adaptTo(LinkModel.class);
+        final LinkModel model = aemContext.request().adaptTo(LinkModel.class);
         // then
         assertThat(model, notNullValue());
         assertThat(model.getClass().getName(), equalTo(LinkModel.class.getName()));
@@ -47,14 +47,14 @@ class LinkModelTest {
         assertThat(model.getLink(), notNullValue());
     }
 
-    @Disabled
     @Test
     void testModelEmpty() {
         // given
-        final Resource resource = aemContext.resourceResolver().getResource("/content/aemcors/en/home/jcr:content/root/link_empty");
-        assertThat(resource, notNullValue());
+        Resource resource = aemContext.resourceResolver().getResource("/content/aemcors/en/home/jcr:content/root/container/container/link_empty");
         assertThat(resource.getResourceType(), is(RESOURCE_TYPE));
-        final LinkModel model = resource.adaptTo(LinkModel.class);
+        aemContext.currentResource(resource);
+        aemContext.request().setResource(resource);
+        final LinkModel model = aemContext.request().adaptTo(LinkModel.class);
         // then
         assertThat(model, notNullValue());
         assertThat(model.getClass().getName(), equalTo(LinkModel.class.getName()));

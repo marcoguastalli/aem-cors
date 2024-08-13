@@ -40,15 +40,23 @@
                 "jcr:primaryType": "nt:unstructured",
                 "layout": "responsiveGrid",
                 "sling:resourceType": "aemcors/components/container",
-                "link": {
+                "title": {
                   "jcr:primaryType": "nt:unstructured",
-                  "linkURL": "/content/aemcors/en/home",
-                  "linkText": "reload",
-                  "sling:resourceType": "aemcors/components/link"
+                  "jcr:title": "Title as h2",
+                  "id": "id_title_2",
+                  "type": "h2",
+                  "linkTarget": "_self",
+                  "sling:resourceType": "aemcors/components/title/v4/title"
                 },
-                "link_empty": {
+                "title_with_link": {
                   "jcr:primaryType": "nt:unstructured",
-                  "sling:resourceType": "aemcors/components/link"
+                  "jcr:createdBy": "admin",
+                  "jcr:title": "Title as h3 (with link)",
+                  "id": "id_title_3",
+                  "type": "h3",
+                  "linkURL": "/content/aemcors/language-masters/page",
+                  "linkTarget": "_self",
+                  "sling:resourceType": "aemcors/components/title/v4/title"
                 }
               }
             }
