@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/conf/aemcors" mode="merge"/>
-    <filter root="/content/aemcors" mode="merge"/>
+    <!-- /conf is always a 'replace' -->
+    <filter root="/conf/aemcors" mode="replace"/>
+    <!-- /content/aemcors is a 'replace' because I need it as replace (for now) -->
+    <filter root="/content/aemcors" mode="replace"/>
+    <filter root="/content/aemcors/language-masters/en" mode="replace">
+        <include pattern="/content/aemcors/language-masters/en(/.*)?"/>
+        <exclude pattern="/content/aemcors/language-masters/en/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/aemcors/us" mode="replace">
+        <include pattern="/content/aemcors/us(/.*)?"/>
+        <exclude pattern="/content/aemcors/us/jcr:content(/.*)?"/>
+    </filter>
+    <!-- /content/dam/aemcors/* are always a 'merge' -->
     <filter root="/content/dam/aemcors" mode="merge">
         <exclude pattern="/content/dam/aemcors(/.*)?"/>
         <include pattern="/content/dam/aemcors/jcr:content(/.*)?"/>
     </filter>
-    <filter root="/content/dam/aemcors/asset.jpg" mode="merge"/>
+    <filter root="/content/dam/aemcors/icons" mode="merge"/>
+    <filter root="/content/dam/aemcors/images" mode="merge"/>
+    <!-- /content/experience-fragments are always a 'merge' -->
     <filter root="/content/experience-fragments/aemcors" mode="merge"/>
 </workspaceFilter>

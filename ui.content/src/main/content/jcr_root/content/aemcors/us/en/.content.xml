@@ -6,8 +6,8 @@
         pageTitle="AEM CORS"
         jcr:primaryType="cq:PageContent"
         jcr:title="en"
-        cq:template="/conf/aemcors/settings/wcm/templates/spa-app-template"
-        sling:resourceType="aemcors/components/spa"
+        cq:template="/conf/aemcors/settings/wcm/templates/page-content"
+        sling:resourceType="aemcors/components/page"
     >
         <cq:LiveSyncConfig
             cq:isDeep="{Boolean}true"

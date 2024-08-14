@@ -2,11 +2,11 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal" xmlns:cq="http://www.day.com/jcr/cq/1.0"
     jcr:mixinTypes="[rep:AccessControllable]"
     jcr:primaryType="cq:Page">
+    <nextjs-page/>
+    <page/>
+    <remote-page/>
+    <spa-app/>
+    <spa-page/>
     <xf/>
     <rep:policy/>
-    <page/>
-    <spa-app/>
-    <remote-page/>
-    <spa-page/>
-    <nextjs-page/>
 </jcr:root>
