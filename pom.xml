@@ -7,7 +7,7 @@
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>AEM CORS</name>
-    <description>AEM CORS</description>
+    <description>AEM CORS WITH FRONTEND MODULE REACT</description>
     <!-- modules -->
     <modules>
         <module>all</module>
