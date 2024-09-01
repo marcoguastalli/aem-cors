@@ -36,9 +36,9 @@
         <vault.user>admin</vault.user>
         <vault.password>admin</vault.password>
         <!-- AEM SDK -->
-        <aem.sdk.api>2024.8.17465.20240813T175259Z-240700</aem.sdk.api>
+        <aem.sdk.api>2024.8.17465.20240813T175259Z-240800</aem.sdk.api>
         <!-- Adobe Core Components https://github.com/adobe/aem-core-wcm-components/releases -->
-        <core.wcm.components.version>2.25.4</core.wcm.components.version>
+        <core.wcm.components.version>2.26.0</core.wcm.components.version>
         <!-- SPA Project Core https://github.com/adobe/aem-spa-project-core/releases -->
         <spa.project.core.version>1.3.16</spa.project.core.version>
         <!-- Frontend Maven Plugin https://github.com/eirslett/frontend-maven-plugin/releases -->
@@ -54,8 +54,8 @@
         <com.fasterxml.jackson.core.version>2.17.1</com.fasterxml.jackson.core.version>
         <!-- JUnit version -->
         <org.junit.version>5.8.2</org.junit.version>
-        <org.mockito.version>4.1.0</org.mockito.version>
-        <io.wcm.testing.version>5.1.2</io.wcm.testing.version>
+        <org.mockito.version>4.11.0</org.mockito.version>
+        <io.wcm.testing.version>5.2.0</io.wcm.testing.version>
         <uk.org.lidalia.slf4j-test.version>1.2.0</uk.org.lidalia.slf4j-test.version>
     </properties>
     <!-- build -->
@@ -633,7 +633,7 @@
             <dependency>
                 <groupId>uk.org.lidalia</groupId>
                 <artifactId>slf4j-test</artifactId>
-                <version>1.0.1</version>
+                <version>${uk.org.lidalia.slf4j-test.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
