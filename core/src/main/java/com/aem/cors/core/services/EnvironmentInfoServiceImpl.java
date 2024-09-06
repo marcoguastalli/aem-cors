@@ -1,15 +1,14 @@
 package com.aem.cors.core.services;
 
-import static com.aem.cors.core.CoreConstants.OSGI_CONFIG_PREFIX;
-
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.Designate;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
+import static com.aem.cors.core.CoreConstants.OSGI_CONFIG_PREFIX;
 
 @Getter
 @Slf4j

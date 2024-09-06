@@ -15,9 +15,8 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 const path = require('path');
-const getEntrypoints = require('./utils/entrypoints');
 
-const BUILD_DIR = path.join(__dirname, 'build');
+const BUILD_DIR = path.join(__dirname, 'dist');
 const CLIENTLIB_DIR = path.join(
   __dirname,
   '..',
@@ -30,36 +29,65 @@ const CLIENTLIB_DIR = path.join(
   'aemcors',
   'clientlibs'
 );
-const ASSET_MANIFEST_PATH = path.join(BUILD_DIR, 'asset-manifest.json');
 
-const entrypoints = getEntrypoints(ASSET_MANIFEST_PATH);
+const libsBaseConfig = {
+  allowProxy: true,
+  serializationFormat: 'xml',
+  cssProcessor: ['default:none', 'min:none'],
+  jsProcessor: ['default:none', 'min:none']
+};
 
 // Config for `aem-clientlib-generator`
 module.exports = {
   context: BUILD_DIR,
   clientLibRoot: CLIENTLIB_DIR,
-  libs: {
-    name: 'clientlib-react',
-    allowProxy: true,
-    categories: ['aemcors.react'],
-    serializationFormat: 'xml',
-    cssProcessor: ['default:none', 'min:none'],
-    jsProcessor: ['default:none', 'min:none'],
-    assets: {
-      // Copy entrypoint scripts and stylesheets into the respective ClientLib
-      // directories (in the order they are in the entrypoints arrays). They
-      // will be bundled by AEM and requested from the HTML. The remaining
-      // chunks (placed in `resources`) will be loaded dynamically
-      js: entrypoints.filter(fileName => fileName.endsWith('.js')),
-      css: entrypoints.filter(fileName => fileName.endsWith('.css')),
+  libs: [
+    {
+      ...libsBaseConfig,
+      name: 'clientlib-dependencies',
+      categories: ['aemcors.dependencies'],
+      assets: {
+        // Copy entrypoint scripts and stylesheets into the respective ClientLib
+        // directories
+        js: {
+          cwd: 'clientlib-dependencies',
+          files: ['**/*.js'],
+          flatten: false
+        },
+        css: {
+          cwd: 'clientlib-dependencies',
+          files: ['**/*.css'],
+          flatten: false
+        }
+      }
+    },
+    {
+      ...libsBaseConfig,
+      name: 'clientlib-site',
+      categories: ['aemcors.site'],
+      dependencies: ['aemcors.dependencies'],
+      assets: {
+        // Copy entrypoint scripts and stylesheets into the respective ClientLib
+        // directories
+        js: {
+          cwd: 'clientlib-site',
+          files: ['**/*.js'],
+          flatten: false
+        },
+        css: {
+          cwd: 'clientlib-site',
+          files: ['**/*.css'],
+          flatten: false
+        },
 
-      // Copy all other files into the `resources` ClientLib directory
-      resources: {
-        cwd: '.',
-        files: ['**/*.*'],
-        flatten: false,
-        ignore: entrypoints
+        // Copy all other files into the `resources` ClientLib directory
+        resources: {
+          cwd: 'clientlib-site',
+          files: ['**/*.*'],
+          flatten: false,
+          ignore: ['**/*.js', '**/*.css']
+        }
       }
     }
-  }
+  ]
 };

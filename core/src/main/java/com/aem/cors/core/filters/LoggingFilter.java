@@ -15,15 +15,6 @@
  */
 package com.aem.cors.core.filters;
 
-import java.io.IOException;
-
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.engine.EngineConstants;
 import org.osgi.service.component.annotations.Component;
@@ -32,6 +23,9 @@ import org.osgi.service.component.propertytypes.ServiceRanking;
 import org.osgi.service.component.propertytypes.ServiceVendor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.servlet.*;
+import java.io.IOException;
 
 /**
  * Simple servlet filter component that logs incoming requests.

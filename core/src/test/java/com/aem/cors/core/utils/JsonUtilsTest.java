@@ -1,5 +1,11 @@
 package com.aem.cors.core.utils;
 
+import com.aem.cors.core.commonbeans.RestOperationResult;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.junit.jupiter.api.Test;
+
+import java.io.Serializable;
+
 import static com.aem.cors.core.CoreConstantsTest.JSON_A_STRING;
 import static com.aem.cors.core.CoreConstantsTest.JUST_A_STRING;
 import static com.aem.cors.core.utils.JsonUtils.createJsonStringFromObject;
@@ -7,13 +13,6 @@ import static com.aem.cors.core.utils.JsonUtils.createObjectFromJsonString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
-
-import java.io.Serializable;
-
-import org.junit.jupiter.api.Test;
-
-import com.aem.cors.core.commonbeans.RestOperationResult;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 class JsonUtilsTest {
 

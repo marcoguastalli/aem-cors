@@ -1,0 +1,13 @@
+<sly data-sly-use.model="com.aem.cors.core.models.components.slinginfo.SlingInfoModel">
+    <div data-sly-test="${model.isAuthor}">Author Sling Info</div>
+    <div data-sly-test="${model.isPublish}">Publish Sling Info</div>
+    <ul>
+        <li>sling id: ${model.slingId}</li>
+        <li>sling home: ${model.slingHome}</li>
+        <li>sling url: ${model.slingUrl}</li>
+        <li>sling name: ${model.slingName}</li>
+        <li>sling description: ${model.slingDescription}</li>
+        <li>sling runmodes: ${model.runModes}</li>
+    </ul>
+    <div data-sly-test="${model.param}">param: ${model.param}</div>
+</sly>
