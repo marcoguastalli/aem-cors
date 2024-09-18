@@ -60,7 +60,7 @@ public final class AppAemContext {
      * @return {@link AemContextBuilder}
      */
     public static AemContextBuilder newAemContextBuilder(ResourceResolverType resourceResolverType) {
-        return new AemContextBuilder()
+        return new AemContextBuilder(resourceResolverType)
                 .plugin(CACONFIG)
                 .plugin(CORE_COMPONENTS)
                 .afterSetUp(SETUP_CALLBACK);

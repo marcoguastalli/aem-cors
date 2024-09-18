@@ -7,6 +7,8 @@
   "aemcors.components.htmlcomponent.tab.general.field.htmlcode": "Code",
   "aemcors.components.htmlcomponent.title": "HTML Component",
   "aemcors.components.link.description": "Add and configure a link",
+  "aemcors.components.link.field.linkTarget.description": "If checked the link will be opened in a new browser tab.",
+  "aemcors.components.link.field.linkTarget.label": "Open link in new tab",
   "aemcors.components.link.field.linkText.description": "Please insert a link text",
   "aemcors.components.link.field.linkText.label": "Link Text",
   "aemcors.components.link.field.linkURL.description": "Please select a link path",
