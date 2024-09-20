@@ -5,7 +5,6 @@ import com.adobe.cq.export.json.ExporterConstants;
 import com.adobe.cq.wcm.core.components.commons.link.Link;
 import com.adobe.cq.wcm.core.components.commons.link.LinkManager;
 import com.adobe.cq.wcm.core.components.util.AbstractComponentImpl;
-import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -19,7 +18,6 @@ import javax.annotation.PostConstruct;
 import static com.aem.cors.core.CoreConstants.DOT;
 import static com.aem.cors.core.CoreConstants.HTML_EXTENSION;
 
-@Getter
 @Model(adaptables = SlingHttpServletRequest.class,
         adapters = {LinkModel.class, ComponentExporter.class},
         resourceType = LinkModel.RESOURCE_TYPE,
@@ -33,30 +31,36 @@ public class LinkModel extends AbstractComponentImpl {
     public static final String RESOURCE_TYPE = "aemcors/components/link";
 
     @Self
-    private SlingHttpServletRequest request;
-    @ValueMapValue
-    private String linkURL;
-    @ValueMapValue
-    private String linkText;
-
+    private SlingHttpServletRequest slingHttpServletRequest;
     @Self
     private LinkManager linkManager;
-    protected Link link;
+    @ValueMapValue
+    private String linkText;
+    @ValueMapValue
+    private String linkURL;
+    protected Link<String> link;
 
     @PostConstruct
     private void initModel() {
         link = this.linkManager.get(this.resource).build();
     }
 
-    public String getLinkUrl() {
+    public String getLinkText() {
+        return linkText;
+    }
+
+    public String getLinkURL() {
         if (null != link && link.isValid()) {
             return link.getURL();
         }
         return linkURL.concat(DOT).concat(HTML_EXTENSION);
     }
 
+    public Link<String> getLink() {
+        return link;
+    }
+
     public boolean isEmpty() {
-        //return StringUtils.isEmpty(getLinkPath()) || StringUtils.isEmpty(getLinkText());
         return StringUtils.isEmpty(getLinkText());
     }
 }

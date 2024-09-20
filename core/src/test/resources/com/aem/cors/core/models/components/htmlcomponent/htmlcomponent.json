@@ -112,15 +112,10 @@
                   "text": "lalala :)",
                   "sling:resourceType": "aemcors/components/helloworld"
                 },
-                "link": {
+                "htmlcomponent": {
                   "jcr:primaryType": "nt:unstructured",
-                  "linkURL": "/content/aemcors/en/home",
-                  "linkText": "reload",
-                  "sling:resourceType": "aemcors/components/link"
-                },
-                "link_empty": {
-                  "jcr:primaryType": "nt:unstructured",
-                  "sling:resourceType": "aemcors/components/link"
+                  "htmlCode": "&lt;script type=&quot;text/javascript&quot;>&#xd;&#xa;alert('do not do this!');&#xd;&#xa;&lt;/script>&#xd;&#xa;",
+                  "sling:resourceType": "aemcors/components/htmlcomponent"
                 }
               }
             }
