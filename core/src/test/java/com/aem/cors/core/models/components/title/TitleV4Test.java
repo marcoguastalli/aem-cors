@@ -14,7 +14,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-@ExtendWith({MockitoExtension.class, AemContextExtension.class})
+@ExtendWith(AemContextExtension.class)
 class TitleV4Test {
 
     AemContext aemContext = AppAemContext.newAemContext(ResourceResolverType.JCR_MOCK);
