@@ -44,7 +44,7 @@ class LinkModelTest {
         // then
         assertThat(model, notNullValue());
         assertThat(model.getClass().getName(), equalTo(LinkModel.class.getName()));
-        assertThat(model.getLinkURL(), is(PATH_CONTENT_EN_HOME.concat(DOT)));
+        assertThat(model.getLinkURL(), is(PATH_CONTENT_EN_HOME));
         assertThat(model.getLinkText(), is("reload"));
         assertThat(model.isEmpty(), is(Boolean.FALSE));
         assertThat(model.getLink(), notNullValue());

@@ -35,11 +35,13 @@
         <sling.password>admin</sling.password>
         <vault.user>admin</vault.user>
         <vault.password>admin</vault.password>
+        <!-- AEM SDK -->
+        <aem.sdk.api>2024.8.17465.20240813T175259Z-240800</aem.sdk.api>
         <!-- AEM SDK Release Notes
         https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/maintenance/latest
         https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/release-notes/release-notes-current?lang=en
         -->
-        <aem.sdk.api>2024.9.17689.20240905T073330Z-240800</aem.sdk.api>
+        <!--aem.sdk.api>2024.9.17689.20240905T073330Z-240800</aem.sdk.api-->
         <!-- Adobe Core Components https://github.com/adobe/aem-core-wcm-components/releases -->
         <core.wcm.components.version>2.26.0</core.wcm.components.version>
         <!-- SPA Project Core https://github.com/adobe/aem-spa-project-core/releases -->
