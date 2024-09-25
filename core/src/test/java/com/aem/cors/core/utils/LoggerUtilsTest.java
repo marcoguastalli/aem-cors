@@ -2,20 +2,16 @@ package com.aem.cors.core.utils;
 
 import com.aem.cors.core.exceptions.AemRuntimeException;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoSession;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.MockitoAnnotations;
 import org.slf4j.Logger;
 
 import static com.aem.cors.core.utils.LoggerUtils.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
 
-@ExtendWith(MockitoExtension.class)
 class LoggerUtilsTest {
 
     static final String LOG_MESSAGE = "bla bla bla";
@@ -25,6 +21,11 @@ class LoggerUtilsTest {
     Logger log;
     @Mock
     SlingHttpServletRequest slingHttpServletRequest;
+
+    @BeforeEach
+    public void init() {
+        MockitoAnnotations.openMocks(this);
+    }
 
     @Test
     void testLogDebugTrackingId() {

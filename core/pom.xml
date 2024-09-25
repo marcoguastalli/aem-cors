@@ -147,12 +147,6 @@ Export-Package: com.aem.cors.core.commonbeans.*;com.aem.cors.core.exceptions.*;c
             <scope>test</scope>
         </dependency>
         <!-- Testing END -->
-        <!-- gson -->
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <scope>provided</scope>
-        </dependency>
         <!-- lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>

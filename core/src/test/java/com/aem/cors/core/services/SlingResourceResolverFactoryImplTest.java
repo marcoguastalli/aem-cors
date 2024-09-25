@@ -2,6 +2,7 @@ package com.aem.cors.core.services;
 
 import com.aem.cors.core.AppAemContext;
 import io.wcm.testing.mock.aem.junit5.AemContext;
+import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,7 +18,7 @@ import static org.mockito.ArgumentMatchers.anyMap;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
+@ExtendWith({AemContextExtension.class, MockitoExtension.class})
 class SlingResourceResolverFactoryImplTest {
 
     AemContext aemContext = AppAemContext.newAemContext();

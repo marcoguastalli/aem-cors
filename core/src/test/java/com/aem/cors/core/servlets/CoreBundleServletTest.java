@@ -22,7 +22,7 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.when;
 
-@ExtendWith({MockitoExtension.class, AemContextExtension.class})
+@ExtendWith({AemContextExtension.class, MockitoExtension.class})
 class CoreBundleServletTest {
     static final String SERVLET_OUTPUT = "{\"result\":\"The bundle 'aem-cors.core' is up and active in '' with ORGANIZATION_ID: '" + OSGI_CONFIG_PREFIX + "'\"}";
 

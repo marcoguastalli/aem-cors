@@ -23,8 +23,7 @@ import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.nullValue;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(AemContextExtension.class)
-@ExtendWith(MockitoExtension.class)
+@ExtendWith({AemContextExtension.class, MockitoExtension.class})
 class SlingInfoModelTest {
 
     AemContext aemContext = AppAemContext.newAemContext(ResourceResolverType.JCR_MOCK);

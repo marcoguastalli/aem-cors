@@ -6,15 +6,10 @@ import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.testing.mock.sling.ResourceResolverType;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mockito;
-import org.mockito.MockitoSession;
-import org.mockito.junit.jupiter.MockitoExtension;
 
-import static com.aem.cors.core.CoreConstants.DOT;
 import static com.aem.cors.core.CoreConstantsTest.PATH_CONTENT_EN_HOME;
 import static com.aem.cors.core.models.components.link.LinkModel.RESOURCE_TYPE;
 import static org.hamcrest.CoreMatchers.equalTo;

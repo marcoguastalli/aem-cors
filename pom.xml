@@ -35,13 +35,11 @@
         <sling.password>admin</sling.password>
         <vault.user>admin</vault.user>
         <vault.password>admin</vault.password>
-        <!-- AEM SDK -->
-        <aem.sdk.api>2024.8.17465.20240813T175259Z-240800</aem.sdk.api>
         <!-- AEM SDK Release Notes
         https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/maintenance/latest
         https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/release-notes/release-notes-current?lang=en
         -->
-        <!--aem.sdk.api>2024.9.17689.20240905T073330Z-240800</aem.sdk.api-->
+        <aem.sdk.api>2024.9.17882.20240919T100659Z-240800</aem.sdk.api>
         <!-- Adobe Core Components https://github.com/adobe/aem-core-wcm-components/releases -->
         <core.wcm.components.version>2.26.0</core.wcm.components.version>
         <!-- SPA Project Core https://github.com/adobe/aem-spa-project-core/releases -->
@@ -59,8 +57,9 @@
         <com.fasterxml.jackson.core.version>2.17.1</com.fasterxml.jackson.core.version>
         <!-- JUnit version -->
         <org.junit.version>5.8.2</org.junit.version>
-        <org.mockito.version>4.11.0</org.mockito.version>
+        <org.mockito.version>5.12.0</org.mockito.version>
         <io.wcm.testing.version>5.2.0</io.wcm.testing.version>
+        <org.apache.sling.testing.caconfig.mock.plugin.version>1.4.0</org.apache.sling.testing.caconfig.mock.plugin.version>
         <uk.org.lidalia.slf4j-test.version>1.2.0</uk.org.lidalia.slf4j-test.version>
     </properties>
     <!-- build -->
@@ -597,7 +596,7 @@
             <dependency>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>org.apache.sling.testing.caconfig-mock-plugin</artifactId>
-                <version>1.4.0</version>
+                <version>${org.apache.sling.testing.caconfig.mock.plugin.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>commons-collections</groupId>
@@ -636,13 +635,6 @@
                 <scope>test</scope>
             </dependency>
             <!-- Testing END -->
-            <!-- gson -->
-            <dependency>
-                <groupId>com.google.code.gson</groupId>
-                <artifactId>gson</artifactId>
-                <version>2.8.9</version>
-                <scope>provided</scope>
-            </dependency>
             <!-- lombok -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
