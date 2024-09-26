@@ -48,7 +48,7 @@ $include "./default_filters.any"
 /0403 { /type "allow" /method "POST" /url "/bin/aemcors/bundle-core" /extension "json" }
 
 ## Search Page References
-/0406 { /type "allow" /url "/bin/wasisa/search/pagereferences" }
-/0407 { /type "allow" /url "/bin/wasisa/search/pagereferences.json" }
-/0408 { /type "allow" /method "POST" /url "/bin/wasisa/search/pagereferences.json" }
-/0409 { /type "allow" /method "POST" /url "/bin/wasisa/search/pagereferences" /extension "json" }
+/0406 { /type "allow" /url "/bin/aemcors/search/pagereferences" }
+/0407 { /type "allow" /url "/bin/aemcors/search/pagereferences.json" }
+/0408 { /type "allow" /method "POST" /url "/bin/aemcors/search/pagereferences.json" }
+/0409 { /type "allow" /method "POST" /url "/bin/aemcors/search/pagereferences" /extension "json" }

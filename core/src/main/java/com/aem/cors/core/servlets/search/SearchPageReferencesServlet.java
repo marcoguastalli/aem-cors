@@ -39,7 +39,7 @@ import static org.apache.sling.api.servlets.ServletResolverConstants.*;
  */
 @Slf4j
 @Component(service = Servlet.class, property = {
-        SLING_SERVLET_PATHS + "=" + "/bin/wasisa/search/pagereferences",
+        SLING_SERVLET_PATHS + "=" + "/bin/aemcors/search/pagereferences",
         SLING_SERVLET_METHODS + "=" + METHOD_POST,
         SLING_SERVLET_EXTENSIONS + "=" + JSON_EXTENSION}
 )
