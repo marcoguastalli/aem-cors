@@ -15,6 +15,7 @@ public class CoreConstants {
     public static final String HTTP_HEADER_DISPATCHER = "Dispatcher";
     public static final String HTTP_HEADER_NO_CACHE = "no-cache";
     public static final String HTTP_HEADER_NO_CACHE_NO_STORE_MAX_AGE_ZERO = "no-cache, no-store, max-age=0";
+    public static final String HTTP_HEADER_UUID = "X-UUID";
 
     // json responses
     public static final String JSON_ERROR_OBJECT_DEFAULT = "{\"error\": \"an error occurs, check the logs for more details\"}";
@@ -27,6 +28,7 @@ public class CoreConstants {
     public static final String H1 = "h1";
     public static final String HASH = "#";
     public static final String HTML_EXTENSION = "html";
+    public static final String JSON_EXTENSION = "json";
     public static final String QUESTION = "?";
     public static final String SLASH = "/";
 }

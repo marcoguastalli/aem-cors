@@ -15,4 +15,7 @@ import java.util.List;
 public class PathsBean implements Serializable {
     @JsonProperty
     private List<String> paths;
+
+    public PathsBean() {
+    }
 }
