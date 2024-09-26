@@ -14,5 +14,6 @@ class PathsBeanTest {
     void tesBean() {
         PathsBean result = new PathsBean(List.of(PATH_CONTENT_LANGUAGE_MASTERS_EN_HOME));
         assertThat(result, notNullValue());
+        assertThat(new PathsBean(), notNullValue());
     }
 }

@@ -1,12 +1,23 @@
 package com.aem.cors.core.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.databind.node.TextNode;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.sling.api.SlingHttpServletRequest;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.IOException;
 import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import static com.aem.cors.core.utils.LoggerUtils.logWarnTrackingId;
 
 /**
  * Util class for json operations with the Jackson library
@@ -28,8 +39,7 @@ public class JsonUtils {
      */
     public static String createJsonStringFromObject(@NotNull Serializable serializable) {
         try {
-            return OBJECT_MAPPER.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false)
-                    .writeValueAsString(serializable);
+            return OBJECT_MAPPER.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false).writeValueAsString(serializable);
         } catch (JsonProcessingException e) {
             log.error("Error createJsonStringFromObject", e);
             return null;
@@ -52,5 +62,91 @@ public class JsonUtils {
         }
     }
 
+    /**
+     * Create a json with the input entries
+     *
+     * @param entries to add in the json
+     * @return an ObjectNode
+     */
+    public static ObjectNode createJsonObjectNodeFromEntries(@NotNull Set<Map.Entry<String, String>> entries) {
+        // create a json
+        ObjectNode rootNode = OBJECT_MAPPER.createObjectNode();
+        entries.forEach(entry -> {
+            // create a node
+            final TextNode textNode = new TextNode(entry.getValue());
+            // add the node to the json
+            rootNode.putIfAbsent(entry.getKey(), textNode);
+        });
+        return rootNode;
+    }
+
+    /**
+     * Create a json with the input entries
+     *
+     * @param entries to add in the json
+     * @return an ObjectNode
+     */
+    public static ObjectNode createJsonObjectNodeFromEntriesObject(@NotNull Set<Map.Entry<String, @NotNull Map<String, String>>> entries) {
+        // create a json
+        ObjectNode rootNode = OBJECT_MAPPER.createObjectNode();
+        // add input entries
+        entries.forEach(entry -> {
+            ObjectNode subNode = OBJECT_MAPPER.createObjectNode();
+            entry.getValue().forEach(subNode::put);
+            rootNode.set(entry.getKey(), subNode);
+        });
+        return rootNode;
+    }
+
+    /**
+     * Create a json array with the input entries
+     *
+     * @param entries to add in the json array
+     * @return an ArrayNode
+     */
+    public static ArrayNode createJsonArrayNodeFromEntries(@NotNull Set<Map.Entry<String, String>> entries) {
+        // create a json array
+        ArrayNode arrayNode = OBJECT_MAPPER.createArrayNode();
+        entries.forEach(entry -> {
+            // create a node
+            final ObjectNode objectNode = OBJECT_MAPPER.createObjectNode();
+            final TextNode textNode = new TextNode(entry.getValue());
+            // add the node to the json
+            objectNode.putIfAbsent(entry.getKey(), textNode);
+            arrayNode.add(objectNode);
+        });
+        return arrayNode;
+    }
+
+    /**
+     * Create a json array with the input entries
+     *
+     * @param serializableList a List of objects to add to the json
+     * @return an ArrayNode
+     */
+    public static ArrayNode createJsonArrayNodeFromObjects(@NotNull List<Serializable> serializableList) {
+        // create a json array
+        ArrayNode arrayNode = OBJECT_MAPPER.createArrayNode();
+        //add the input entries
+        serializableList.forEach(arrayNode::addPOJO);
+        return arrayNode;
+    }
+
+    /**
+     * @param slingHttpServletRequest the Request
+     * @param trackingId              to track the user
+     * @param clazz                   type class to convert json
+     * @param <T>                     Java generics T
+     * @return the corresponding clazz json object from the input Request
+     */
+    public static <T> T getObjectFromRequest(@NotNull SlingHttpServletRequest slingHttpServletRequest, @NotNull String trackingId, @NotNull Class<T> clazz) {
+        try {
+            return OBJECT_MAPPER.readValue(slingHttpServletRequest.getInputStream(), clazz);
+        } catch (IllegalStateException | IOException e) {
+            final String errorMessage = "Cannot create a json with the provided input";
+            logWarnTrackingId(log, trackingId, errorMessage);
+        }
+        return null;
+    }
 
 }
