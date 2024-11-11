@@ -35,13 +35,16 @@
         <sling.password>admin</sling.password>
         <vault.user>admin</vault.user>
         <vault.password>admin</vault.password>
-        <!-- AEM SDK -->
-        <aem.sdk.api>2024.8.17465.20240813T175259Z-240800</aem.sdk.api>
+        <!-- AEM SDK Release Notes
+        https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/maintenance/latest
+        https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/release-notes/release-notes-current?lang=en
+        -->
+        <aem.sdk.api>2024.10.18459.20241031T210302Z-241000</aem.sdk.api>
         <!-- Adobe Core Components https://github.com/adobe/aem-core-wcm-components/releases -->
-        <core.wcm.components.version>2.26.0</core.wcm.components.version>
+        <core.wcm.components.version>2.27.0</core.wcm.components.version>
         <!-- SPA Project Core https://github.com/adobe/aem-spa-project-core/releases -->
         <spa.project.core.version>1.3.16</spa.project.core.version>
-        <!-- Frontend Maven Plugin https://github.com/eirslett/frontend-maven-plugin/releases -->
+        <!-- Frontend Maven Plugin https://github.com/eirslett/frontend-maven-plugin/tags -->
         <frontend-maven-plugin.version>1.15.0</frontend-maven-plugin.version>
         <node.version>v16.17.0</node.version>
         <npm.version>8.15.0</npm.version>
@@ -49,7 +52,7 @@
         <bnd.version>5.1.2</bnd.version>
         <componentGroupName>AEM CORS</componentGroupName>
         <!-- AEM Analyser versions https://github.com/adobe/aemanalyser-maven-plugin/releases -->
-        <aemanalyser.version>1.6.4</aemanalyser.version>
+        <aemanalyser.version>1.6.6</aemanalyser.version>
         <!-- 3rd party versions -->
         <com.fasterxml.jackson.core.version>2.17.1</com.fasterxml.jackson.core.version>
         <!-- JUnit version -->
