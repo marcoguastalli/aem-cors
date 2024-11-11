@@ -1,45 +1,22 @@
 package com.aem.cors.core.servlets;
 
-import static com.aem.cors.core.CoreConstants.CONTENT_TYPE_APPLICATION_JSON;
-import static com.aem.cors.core.CoreConstants.HTTP_HEADER_CACHE_CONTROL;
-import static com.aem.cors.core.CoreConstants.HTTP_HEADER_NO_CACHE;
-import static com.aem.cors.core.CoreConstants.JSON_ERROR_OBJECT_DEFAULT;
-import static com.aem.cors.core.utils.LoggerUtils.logErrorTrackingId;
-import static com.aem.cors.core.utils.LoggerUtils.logWarnTrackingId;
-import static java.lang.String.format;
-import static org.apache.commons.lang3.StringUtils.EMPTY;
-
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.sling.api.SlingHttpServletRequest;
+import com.aem.cors.core.exceptions.AemRuntimeException;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.jetbrains.annotations.NotNull;
 
-import com.aem.cors.core.exceptions.AemRuntimeException;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.io.PrintWriter;
 
-import lombok.extern.slf4j.Slf4j;
+import static com.aem.cors.core.CoreConstants.*;
+import static com.aem.cors.core.utils.LoggerUtils.logErrorTrackingId;
+import static java.lang.String.format;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 @Slf4j
 public abstract class AbstractSlingServlet extends SlingAllMethodsServlet {
-    private static final Gson GSON_INSTANCE = new Gson();
-
-
-    protected <T> T readInput(@NotNull SlingHttpServletRequest slingHttpServletRequest, @NotNull String trackingId, @NotNull Class<T> clazz) {
-        try {
-            final JsonObject postRequestDataAsJson = GSON_INSTANCE.fromJson(slingHttpServletRequest.getReader(), JsonObject.class);
-            return GSON_INSTANCE.fromJson(postRequestDataAsJson, clazz);
-        } catch (IllegalStateException | IOException e) {
-            final String errorMessage = "Cannot create a json with the provided input";
-            logWarnTrackingId(log, trackingId, errorMessage);
-        }
-        return null;
-    }
 
     /**
      * Write the input jsonAsString as json

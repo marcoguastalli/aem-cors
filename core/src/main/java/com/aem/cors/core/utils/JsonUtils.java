@@ -1,14 +1,12 @@
 package com.aem.cors.core.utils;
 
-import java.io.Serializable;
-
-import org.jetbrains.annotations.NotNull;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-
 import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
+
+import java.io.Serializable;
 
 /**
  * Util class for json operations with the Jackson library

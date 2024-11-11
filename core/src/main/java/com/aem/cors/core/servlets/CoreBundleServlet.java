@@ -1,6 +1,18 @@
 package com.aem.cors.core.servlets;
 
 
+import com.aem.cors.core.commonbeans.RestOperationResult;
+import com.aem.cors.core.services.EnvironmentInfoService;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.SlingHttpServletResponse;
+import org.jetbrains.annotations.NotNull;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+
+import javax.servlet.Servlet;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
 import static com.aem.cors.core.CoreConstants.EQUALS;
 import static com.aem.cors.core.CoreConstants.HTTP_HEADER_NO_CACHE;
 import static com.aem.cors.core.utils.JsonUtils.createJsonStringFromObject;
@@ -9,20 +21,6 @@ import static org.apache.sling.api.servlets.HttpConstants.METHOD_GET;
 import static org.apache.sling.api.servlets.HttpConstants.METHOD_POST;
 import static org.apache.sling.api.servlets.ServletResolverConstants.SLING_SERVLET_METHODS;
 import static org.apache.sling.api.servlets.ServletResolverConstants.SLING_SERVLET_PATHS;
-
-import java.io.IOException;
-
-import javax.servlet.Servlet;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.SlingHttpServletResponse;
-import org.jetbrains.annotations.NotNull;
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
-
-import com.aem.cors.core.commonbeans.RestOperationResult;
-import com.aem.cors.core.services.EnvironmentInfoService;
 
 /**
  * Check the OSGi config "Apache Sling Servlet/Script Resolver and Error Handler": org.apache.sling.servlets.resolver.SlingServletResolver for paths
