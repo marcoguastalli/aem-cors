@@ -39,25 +39,23 @@
         https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/maintenance/latest
         https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/release-notes/release-notes-current?lang=en
         -->
-        <aem.sdk.api>2024.9.17882.20240919T100659Z-240800</aem.sdk.api>
+        <aem.sdk.api>2025.1.19149.20250116T154450Z-241100</aem.sdk.api>
         <!-- Adobe Core Components https://github.com/adobe/aem-core-wcm-components/releases -->
-        <core.wcm.components.version>2.26.0</core.wcm.components.version>
-        <!-- SPA Project Core https://github.com/adobe/aem-spa-project-core/releases -->
-        <spa.project.core.version>1.3.16</spa.project.core.version>
+        <core.wcm.components.version>2.27.0</core.wcm.components.version>
         <!-- Frontend Maven Plugin https://github.com/eirslett/frontend-maven-plugin/tags -->
         <frontend-maven-plugin.version>1.15.0</frontend-maven-plugin.version>
         <node.version>v16.17.0</node.version>
         <npm.version>8.15.0</npm.version>
         <!-- OSGi versions -->
         <bnd.version>5.1.2</bnd.version>
-        <componentGroupName>AEM CORS</componentGroupName>
+        <componentGroupName>aemcors</componentGroupName>
         <!-- AEM Analyser versions https://github.com/adobe/aemanalyser-maven-plugin/releases -->
-        <aemanalyser.version>1.6.4</aemanalyser.version>
+        <aemanalyser.version>1.6.6</aemanalyser.version>
         <!-- 3rd party versions -->
         <com.fasterxml.jackson.core.version>2.17.1</com.fasterxml.jackson.core.version>
         <!-- JUnit version -->
         <org.junit.version>5.8.2</org.junit.version>
-        <org.mockito.version>5.12.0</org.mockito.version>
+        <org.mockito.version>4.11.0</org.mockito.version>
         <io.wcm.testing.version>5.2.0</io.wcm.testing.version>
         <org.apache.sling.testing.caconfig.mock.plugin.version>1.4.0</org.apache.sling.testing.caconfig.mock.plugin.version>
         <uk.org.lidalia.slf4j-test.version>1.2.0</uk.org.lidalia.slf4j-test.version>
@@ -404,7 +402,6 @@
                        </plugin>
                   -->
             <activation>
-                <activeByDefault>false</activeByDefault>
             </activation>
             <build>
                 <pluginManagement>
@@ -428,7 +425,6 @@
         <profile>
             <id>autoInstallPackage</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
             </activation>
             <build>
                 <pluginManagement>
@@ -467,7 +463,6 @@
         <profile>
             <id>autoInstallPackagePublish</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
             </activation>
             <build>
                 <pluginManagement>
