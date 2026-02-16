@@ -1,0 +1,6 @@
+{
+  "user.mapping": [
+    "aem-cors.core:content-readonly=[content-readonly-service]",
+    "aem-cors.core:content-dam-readonly=[content-dam-readonly-service]"
+  ]
+}

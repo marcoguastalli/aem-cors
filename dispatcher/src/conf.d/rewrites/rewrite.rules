@@ -1,0 +1,44 @@
+#
+# This file contains the rewrite rules, and can be customized.
+#
+# By default, it includes just the rewrite rules. You can
+# add rewrite rules to this file but you should still include
+# the default rewrite rules.
+#
+# https://httpd.apache.org/docs/current/mod/mod_rewrite.html
+
+Include conf.d/rewrites/default_rewrite.rules
+
+# robots.txt
+RewriteRule ^/robots.txt$ /content/dam/${CONTENT_FOLDER_NAME}/robots\.txt [PT,L]
+# favicon.ico
+RewriteRule ^/favicon.ico$ /content/dam/${CONTENT_FOLDER_NAME}/favicon\.ico [PT]
+# bitcoin.pdf
+RewriteRule ^/bitcoin.pdf /content/dam/${CONTENT_FOLDER_NAME}/bitcoin\.pdf [PT,L]
+
+# Match ONLY the exact root URL (https://www.marco27.net/)
+#RewriteCond %{HTTPS} =on
+#RewriteCond %{HTTP_HOST} ^www\.marco27\.net$ [NC]
+#RewriteCond %{REQUEST_URI} ^/$
+#RewriteCond %{QUERY_STRING} ^$
+#RewriteRule ^$ https://www.marco27.net [R=301,L]
+#RewriteRule ^/$ /content/${CONTENT_FOLDER_NAME}/us/en.html [PT,L]
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^/$ /content/${CONTENT_FOLDER_NAME}/us/en.html [PT,L]
+#RewriteRule ^/$ /en.html [PT,L]
+
+# rewrite for root redirect
+RewriteCond %{REQUEST_URI} ^/?$
+RewriteRule ^/?$ /content/${CONTENT_FOLDER_NAME}/us/en.html [PT,L]
+# rewrite for input page request with the /content tenant extension and the .html extension
+RewriteCond %{REQUEST_URI} ^/content
+RewriteCond %{REQUEST_URI} ^/(language-masters|de|es|it|us)/(en|de|es|it)/(.+.html)$
+RewriteRule ^ /content/${CONTENT_FOLDER_NAME}/%1/%2/%3 [R=301,L]
+# rewrite for input page request with the .html extension
+RewriteCond %{REQUEST_URI} !^/content
+RewriteCond %{REQUEST_URI} ^/(language-masters|de|es|it|us)/(en|de|es|it)/(.+.html)$
+RewriteRule ^ /content/${CONTENT_FOLDER_NAME}/%1/%2/%3 [PT,L]
+# rewrite for input page request without the .html extension
+RewriteCond %{REQUEST_URI} !^/content
+RewriteCond %{REQUEST_URI} ^/(language-masters|de|es|it|us)/(en|de|es|it)/(.+)$
+RewriteRule ^ /content/${CONTENT_FOLDER_NAME}/%1/%2/%3.html [PT,L]

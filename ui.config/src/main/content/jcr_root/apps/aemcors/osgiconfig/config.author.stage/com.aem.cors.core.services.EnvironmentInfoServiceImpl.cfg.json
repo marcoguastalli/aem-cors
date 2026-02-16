@@ -1,0 +1,8 @@
+{
+  "host": "https://author-p0-e2.adobeaemcloud.com",
+  "hostname": "$[env:HOSTNAME]",
+  "environmentShortName": "$[env:ENVIRONMENT_SHORT_NAME]",
+  "environmentAndRunMode": "STAGE_AUTHOR",
+  "organizationId": "$[env:ORGANIZATION_ID]",
+  "organizationSecret": "$[env:ORGANIZATION_SECRET]"
+}

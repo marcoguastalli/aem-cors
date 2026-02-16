@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <!-- add config to not show the geolocation popup by default -->
+    <filter root="/conf/global" mode="merge"/>
+    <!-- /conf is always a 'replace' -->
+    <filter root="/conf/aemcors" mode="replace"/>
+    <filter root="/conf/aemcors/settings/cloudconfigs" mode="merge" />
+    <filter root="/conf/aemcors/settings/cloudsettings" mode="merge" />
+    <!-- /content/campaigns is always a 'update' -->
+    <filter root="/content/campaigns" mode="update"/>
+    <!-- /content/aemcors is always a 'merge' -->
+    <filter root="/content/aemcors" mode="merge"/>
+    <!-- /content/aemcors/es is always a 'merge' -->
+    <filter root="/content/aemcors/language-masters" mode="merge">
+        <include pattern="/content/aemcors/language-masters(/.*)?"/>
+        <exclude pattern="/content/aemcors/language-masters/jcr:content(/.*)?"/>
+    </filter>
+    <!-- /content/aemcors/us is a 'replace' because I need it as replace -->
+    <filter root="/content/aemcors/us" mode="merge">
+        <include pattern="/content/aemcors/us(/.*)?"/>
+        <exclude pattern="/content/aemcors/us/jcr:content(/.*)?"/>
+    </filter>
+    <!-- /content/dam/aemcors/* are always a 'merge' -->
+    <filter root="/content/dam/aemcors" mode="merge">
+        <exclude pattern="/content/dam/aemcors(/.*)?"/>
+        <include pattern="/content/dam/aemcors/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/aemcors/icons" mode="merge"/>
+    <filter root="/content/dam/aemcors/images" mode="merge"/>
+    <!-- /content/experience-fragments are always a 'merge' -->
+    <filter root="/content/experience-fragments/aemcors" mode="merge"/>
+</workspaceFilter>

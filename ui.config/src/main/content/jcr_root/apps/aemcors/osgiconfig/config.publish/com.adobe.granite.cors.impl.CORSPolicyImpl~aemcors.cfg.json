@@ -1,0 +1,30 @@
+{
+  "alloworigin": [""],
+  "alloworiginregexp": [
+    "http://localhost"
+  ],
+  "allowedpaths": [".*"],
+  "exposedheaders": [
+    "Accept",
+    "Access-Control-Allow-Origin",
+    "Access-Control-Request-Headers",
+    "Access-Control-Request-Method",
+    "Authorization",
+    "Content-Type",
+    "Origin",
+    "X-Requested-With"
+  ],
+  "supportedheaders": [
+    "Accept",
+    "Access-Control-Allow-Origin",
+    "Access-Control-Request-Headers",
+    "Access-Control-Request-Method",
+    "Authorization",
+    "Content-Type",
+    "Origin",
+    "X-Requested-With"
+  ],
+  "supportedmethods": ["GET","HEAD","POST"],
+  "supportscredentials": "true",
+  "maxage": "-1"
+}

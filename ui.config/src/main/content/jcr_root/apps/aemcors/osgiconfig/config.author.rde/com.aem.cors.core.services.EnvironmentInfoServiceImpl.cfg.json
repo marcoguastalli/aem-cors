@@ -1,0 +1,8 @@
+{
+  "host": "https://author-p0-e4.adobeaemcloud.com",
+  "hostname": "$[env:HOSTNAME]",
+  "environmentShortName": "$[env:ENVIRONMENT_SHORT_NAME]",
+  "environmentAndRunMode": "RDE_AUTHOR",
+  "organizationId": "$[env:ORGANIZATION_ID]",
+  "organizationSecret": "$[env:ORGANIZATION_SECRET]"
+}

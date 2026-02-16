@@ -1,0 +1,8 @@
+{
+  "host": "Please define a new OSGi config in the right folder",
+  "hostname": "Please define a new OSGi config in the right folder",
+  "environmentShortName": "Please define a new OSGi config in the right folder",
+  "environmentAndRunMode": "Please define a new OSGi config in the right folder",
+  "organizationId": "$[env:ORGANIZATION_ID]",
+  "organizationSecret": "$[env:ORGANIZATION_SECRET]"
+}

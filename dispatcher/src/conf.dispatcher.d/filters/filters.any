@@ -1,0 +1,60 @@
+#
+# This file contains the filter ACL, and can be customized.
+#
+# By default, it includes the default filter ACL.
+#
+
+$include "./default_filters.any"
+
+# Allow components JSON model
+/0101 { /type "allow" /method "GET" /path "/content/*" /selectors "model" /extension "json"}
+
+# Allow manifest.webmanifest files located in the content
+/0102 { /type "allow" /extension "webmanifest" /path "/content/*/manifest" }
+
+# Allow Quick Search
+/0110 { /type "allow" /extension "json" /selectors "searchresults" /path "/content/*" }
+
+# Allow GraphQL global endpoint & preflight requests
+# GraphQL also supports GET requests, if you intend to use GET include it in the rule below
+/0164 { /type "allow" /method '(POST|OPTIONS)' /url "/content/graphql/global/endpoint.json" /extension "json"}
+/0165 { /type "allow" /method '(POST|OPTIONS)' /url "/content/cq:graphql/wknd/endpoint.json" /extension "json"}
+
+# GraphQL Persisted Queries
+/0170 { /type "allow" /method '(POST|OPTIONS)' /url "/graphql/execute.json/*" }
+/0171 { /type "allow" /url "/graphql/execute.json/*" }
+
+# ContextHub
+#/0190 { /type "allow" /url "*/contexthub.pagedata.json" }
+#/0191 { /type "allow" /url "/home/users/*.infinity.json" }
+
+# Allow "results" selector
+/0200 { /type "allow" /method "GET" /path "/content/*" /selectors "results" /extension "html" }
+
+# robots.txt
+/0202 { /type "allow" /method 'GET' /url "/robots.txt" }
+/0203 { /type "allow" /method 'GET' /url "/content/dam/${CONTENT_FOLDER_NAME}/robots.txt" }
+
+# bitcoin.pdf
+/0204 { /type "allow" /method 'GET' /url "/bitcoin.pdf" }
+
+# /content/dam/${CONTENT_FOLDER_NAME}
+/0205 { /type "allow" /extension '(pkg|xml|zip)' /path "/content/dam/${CONTENT_FOLDER_NAME}*" }
+
+# Allow GET for Servlets
+## core bundle
+/0300 { /type "allow" /url "/bin/aemcors/bundle-core" }
+/0301 { /type "allow" /url "/bin/aemcors/bundle-core.json" }
+/0302 { /type "allow" /method "GET" /url "/bin/aemcors/bundle-core" /extension "json" }
+
+# Allow POST for Servlets
+/0400 { /type "allow" /url "/bin/aemcors/bundle-core" }
+/0401 { /type "allow" /url "/bin/aemcors/bundle-core.json" }
+/0402 { /type "allow" /method "POST" /url "/bin/aemcors/bundle-core.json" }
+/0403 { /type "allow" /method "POST" /url "/bin/aemcors/bundle-core" /extension "json" }
+
+## Search Page References
+/0406 { /type "allow" /url "/bin/aemcors/search/pagereferences" }
+/0407 { /type "allow" /url "/bin/aemcors/search/pagereferences.json" }
+/0408 { /type "allow" /method "POST" /url "/bin/aemcors/search/pagereferences.json" }
+/0409 { /type "allow" /method "POST" /url "/bin/aemcors/search/pagereferences" /extension "json" }

@@ -1,0 +1,8 @@
+{
+  "host": "https://publish-p0-e3.adobeaemcloud.com",
+  "hostname": "$[env:HOSTNAME]",
+  "environmentShortName": "$[env:ENVIRONMENT_SHORT_NAME]",
+  "environmentAndRunMode": "DEV_PUBLISH",
+  "organizationId": "$[env:ORGANIZATION_ID]",
+  "organizationSecret": "$[env:ORGANIZATION_SECRET]"
+}

@@ -1,0 +1,8 @@
+{
+  "host": "http://localhost:4502",
+  "hostname": "$[env:HOSTNAME]",
+  "environmentShortName": "$[env:ENVIRONMENT_SHORT_NAME]",
+  "environmentAndRunMode": "LOCAL_AUTHOR",
+  "organizationId": "$[env:ORGANIZATION_ID]",
+  "organizationSecret": "$[env:ORGANIZATION_SECRET]"
+}
