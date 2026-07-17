@@ -58,6 +58,7 @@
                         <embedded>
                             <groupId>com.adobe.acs</groupId>
                             <artifactId>acs-aem-commons-all</artifactId>
+                            <classifier>cloud</classifier>
                             <type>zip</type>
                         </embedded>
                         <!-- ACS AEM Commons END -->
@@ -203,6 +204,8 @@
         <dependency>
             <groupId>com.adobe.acs</groupId>
             <artifactId>acs-aem-commons-all</artifactId>
+            <classifier>cloud</classifier>
+            <version>${acs.aem.commons.version}</version>
             <type>zip</type>
         </dependency>
         <!-- AcTool https://github.com/Netcentric/accesscontroltool/releases -->
