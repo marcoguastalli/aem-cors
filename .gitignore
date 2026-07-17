@@ -16,6 +16,7 @@ local.properties
 
 # Eclipse Core
 .project
+.vscode
 
 # External tool builders
 .externalToolBuilders/
@@ -104,5 +105,7 @@ reports/
 
 # Others
 dispatcher/src/conf.d/variables/default.vars
-ui.tests.wdio/test-module/assets/form/themes/**/*diff.png
-ui.tests.wdio/test-module/assets/form/themes/**/*current.png
+
+.claude
+~
+CLAUDE.md
