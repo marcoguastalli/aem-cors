@@ -7,5 +7,5 @@
         jcr:primaryType="cq:PageContent"
         jcr:title="es"
         sling:resourceType="aemcors/components/page"/>
-    <en/>
+    <en jcr:primaryType="cq:Page"/>
 </jcr:root>
