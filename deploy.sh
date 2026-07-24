@@ -2,15 +2,14 @@
 set -e
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Vorwerk AEM LTS Project Deployment Script
+# AEMaaCS Project Deployment Script
 #
 # This script automatically sets up Java 21 and deploys to AEM instances
-# without needing to manually run 'setjdk21' beforehand.
 #
 # Usage:
-#   ./deploy.sh                    # Deploy to author (localhost:4502)
-#   ./deploy.sh publish            # Deploy to publish (localhost:4503)
-#   ./deploy.sh author             # Deploy to author (explicit)
+#   ./deploy.sh                         # Deploy to author (localhost:5502)
+#   ./deploy.sh publish                 # Deploy to publish (localhost:5503)
+#   ./deploy.sh author                  # Deploy to author (explicit)
 #   ./deploy.sh author -Daem.port=7502  # Deploy to custom author port
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -37,28 +36,28 @@ done
 case "$TARGET" in
   author)
     PROFILE="autoInstallSinglePackage"
-    PORT="${AEM_PORT:-${MAVEN_PORT:-4502}}"
+    PORT="${AEM_PORT:-${MAVEN_PORT:-5502}}"
     HOST="${AEM_HOST:-${MAVEN_HOST:-localhost}}"
     ;;
   publish)
     PROFILE="autoInstallSinglePackagePublish"
-    PORT="${AEM_PUBLISH_PORT:-${MAVEN_PORT:-4503}}"
+    PORT="${AEM_PUBLISH_PORT:-${MAVEN_PORT:-5503}}"
     HOST="${AEM_PUBLISH_HOST:-${MAVEN_HOST:-localhost}}"
     ;;
   *)
     echo "Usage: $0 [author|publish] [additional Maven args...]"
     echo ""
     echo "Examples:"
-    echo "  $0 author                           # Deploy to localhost:4502"
-    echo "  $0 publish                          # Deploy to localhost:4503"
-    echo "  $0 author -Daem.port=4503          # Deploy to custom port"
+    echo "  $0 author                           # Deploy to localhost:5502"
+    echo "  $0 publish                          # Deploy to localhost:5503"
+    echo "  $0 author -Daem.port=5503          # Deploy to custom port"
     echo "  $0 author -Daem.host=example.com   # Deploy to custom host"
     exit 1
     ;;
 esac
 
 echo "════════════════════════════════════════════════════════════════════════════════"
-echo "  Vorwerk AEM LTS Project Deployment"
+echo "  AEMaaCS Project Deployment Script"
 echo "════════════════════════════════════════════════════════════════════════════════"
 echo ""
 echo "  Target:    $TARGET (${HOST}:${PORT})"
